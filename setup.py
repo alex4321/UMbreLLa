@@ -1,5 +1,8 @@
 from setuptools import setup, find_packages
     
+with open("requirements.txt") as f:
+    required = f.read().splitlines()
+
 setup(
     name="umbrella",
     version="0.1.0",
@@ -12,7 +15,7 @@ setup(
     license="Apache-2.0",
     packages=find_packages(exclude=["examples", "app"]),
     python_requires=">=3.10",
-    install_requires=[],
+    install_requires=required,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: Apache Software License",
